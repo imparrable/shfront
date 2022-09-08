@@ -1,0 +1,149 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+  background: linear-gradient(to bottom right, #8cf8b8, #2234f9);
+}
+/* Main heading for card's front cover */
+.card-front__heading {
+  font-size: 17px;
+  margin-top: 3px;
+  text-align: center;
+}
+/* For both inside page's main heading and 'view me' text on card front cover */
+.card-front__text-view {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-top: 0.5rem;
+}
+/* Front cover */
+.card-front__tp {
+  color: #fafbfa;
+}
+
+/* Layout Structure=========================================*/
+.container-fluid {
+  background: linear-gradient(to bottom right, #8cf8b8, #2234f9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  
+}
+/* Container to hold all cards in one place */
+.card-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 100%;
+  margin-top: 150px;
+  width: 100vh;
+  
+
+  
+}
+/* Card ============================================*/
+/* Area to hold an individual card */
+.card-section:hover .card {
+  align-items: center;
+  display: flex;
+  height: 160px;
+  justify-content: center;
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+  width: 160px;
+}
+/* A container to hold the flip card and the inside page */
+.card { 
+  background-color: rgba(0, 0, 0, 0.05);
+  box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.5);
+  height: 100%;
+  position: relative;
+  transition: all 0.5s linear;
+  width: 100%;
+  
+}
+/* container for the front side */
+.card-front {
+  height: 16rem;
+  width: 16rem;
+  position: absolute;
+  backface-visibility: hidden;
+}
+.card-back{
+  height: 16rem;
+  width: 16rem;
+  transform:rotateY(180deg);
+  backface-visibility: hidden;
+  position: relative;
+  background: linear-gradient(to bottom right, #8cf8b8, #2234f9);
+  }
+.card-front-text {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 16rem;
+  justify-content: center;
+  color: white;
+  background: linear-gradient(to bottom, #8cf8b8, #2234f9);
+}
+
+.callButton {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 53px;
+  border-top:solid 3px white;
+  background-color: white;
+}
+button{
+  position: relative;
+  top: -1.5px;
+  border: none;
+  background-color:transparent;
+}
+h2{
+  position: relative;
+  bottom: 20px;
+}
+@media (max-width:500px) {
+  .card-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    padding: 2em;
+    margin-left: 5px;
+    margin-right: 5px;
+}}
+@media (min-width:501px) {
+  .card-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2em;
+    padding: 2em;
+    margin-left: 5px;
+    margin-right: 5px;
+}}
+@media (min-width:768px) {
+  .card-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1em;
+    padding: 2em;
+    margin-left: -6px;
+    margin-right: 5px;
+  }}
+p{
+  color: white;
+  text-align: center;
+  font-size: 15px;
+}

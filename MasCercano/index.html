@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartHelp/MasCercano</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--Diseño básico para ver la funcionalidad, hay que modificarlo-->
+    <div class="container" id="modifica">
+        <h2 id="encabezado">
+            Indica el servicio:
+        </h2>
+        <h4>En un radio de 5km</h4>
+        <div id="opc1" class="selector" onclick="servicio_elegido('hospital')">
+            Hospitales
+        </div>
+        <div id="opc2" class="selector" onclick="servicio_elegido('veterinary_care')">
+            Veterinarios
+        </div>
+        <div id="opc3" class="selector" onclick="servicio_elegido('fire_station')">
+            Bomberos
+        </div>
+        <div id="opc4" class="selector" onclick="servicio_elegido('police')">
+            Policía
+        </div>
+        <div id="opc5" class="selector" onclick="servicio_elegido('doctor')">
+            Salud
+        </div>
+        <div id="opc6" class="selector" onclick="servicio_elegido('pharmacy')">
+            Farmácias
+        </div>
+
+    </div>
+    <script src="api_cerca.js"></script>
+</body>
+</html>
