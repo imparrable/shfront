@@ -1,9 +1,8 @@
-
 var Url = new URL(window.location.href);
 var ciudad = Url.search.replace("?","").replace("=","").replace("city","");
 var id_carta = 0;
 console.log(ciudad);
-fetch("https://4le956zpa7.execute-api.us-west-2.amazonaws.com/sh-api1/services?city="+ciudad)
+fetch("http://smarthelp-env.eba-pxsfumkq.eu-west-3.elasticbeanstalk.com/services "+ciudad)
 
   .then((data) => data.json())
   .then((services) => createCards(services));
@@ -13,8 +12,8 @@ function createCards(services) {
   services.forEach((service) => {
     container.innerHTML += ` 
 
-        <div class="card-section" style="width:160px;height:160px">
-                <div class="card">
+        <div class="card-section" style="width:160px">
+                <div class="cardPol">
                     
                     <div class="card-front" id="${id_carta}">
                             <div class="card-front-text">
@@ -38,8 +37,8 @@ function createCards(services) {
                     </div>
                 </div>           
         </div>
-            `;
-            ++id_carta;
+            `
+            
   });
 }
 // document.getElementsByClassName("carta").addEventListener("mouseout",function(){
