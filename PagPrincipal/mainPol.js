@@ -1,9 +1,29 @@
-var Url = new URL(window.location.href);
-var ciudad = Url.search.replace("?","").replace("=","").replace("city","");
+let Url = (new URL(document.location)).searchParams;
+const ciudadUrl = Url.get("city");
+const codnUrl = Url.get("latlng");
 var id_carta = 0;
-console.log(ciudad);
-fetch("http://smarthelp-env.eba-pxsfumkq.eu-west-3.elasticbeanstalk.com/services "+ciudad)
+console.log(ciudadUrl+" -- "+codnUrl);
+let cambioweb1 = document.getElementById("mascerca");
+let cambioweb2 = document.getElementById("contact");
+//formulario.setAttribute('action', 'ventas/registrar_compra')
+document.getElementById("cuerpo").addEventListener("load",function(){
+  document.getElementById("resultado").value = ciudadUrl;
+  document.getElementById("punto").value = codnUrl;
+  //al cargar el body completamos los campos ocultos para la comunicacion de la web.
+});
+//un evento para cada boton, actuando como un "a" pero es un formulario para pasar info
+cambioweb1.addEventListener("click", () => {
+  document.getElementById("form2").setAttribute('action', '../MasCercano/index.html');
+  document.getElementById("form2").submit();
+  alert("coordenada: "+codnUrl);
+});
 
+cambioweb2.addEventListener("click", () => {
+  document.getElementById("form2").setAttribute('action', '../Contacto/index.html');
+  document.getElementById("form2").submit();
+});
+//generacion del HTML
+fetch("https://4le956zpa7.execute-api.us-west-2.amazonaws.com/sh-api1/services?city="+ciudadUrl)
   .then((data) => data.json())
   .then((services) => createCards(services));
 
@@ -41,7 +61,3 @@ function createCards(services) {
             
   });
 }
-// document.getElementsByClassName("carta").addEventListener("mouseout",function(){
-//     document.getElementById("MyElement").className += "volver";
-//     document.getElementById().classList.add("volver");
-// };) Comentado por si queremos cambiar la clase para girar con JS
