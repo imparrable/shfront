@@ -44,11 +44,12 @@ function manda_info(latitude, longitude){
                 //codificamos la respuesta por problemas con los espacios y apostrofes para nuestra api:
                 city_result = element.long_name.replaceAll(" ","").replaceAll("L'","L");
                 document.getElementById("resultado").value = city_result;
+                document.getElementById("punto").value = lat+","+long;
                 //rellenamos el formulario con el municipio y lo enviamos a nuestra api.
                 //console log para verificar cuanto correcto es.
                 console.log(city_result);
                 //console.log para verificar lo que obtienen las variables y los cambios realizados.
-                alert("Localizado Correctamente: "+element.long_name);
+                alert("Localizado Correctamente: "+element.long_name+".");
                 document.getElementById("formulario1").submit();
             }
     });
