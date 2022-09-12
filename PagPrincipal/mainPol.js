@@ -5,20 +5,20 @@ var id_carta = 0;
 console.log(ciudadUrl+" -- "+codnUrl);
 let cambioweb1 = document.getElementById("mascerca");
 let cambioweb2 = document.getElementById("contact");
-//formulario.setAttribute('action', 'ventas/registrar_compra')
-document.getElementById("cuerpo").addEventListener("load",function(){
-  document.getElementById("resultado").value = ciudadUrl;
-  document.getElementById("punto").value = codnUrl;
-  //al cargar el body completamos los campos ocultos para la comunicacion de la web.
-});
+//formulario.setAttribute('action', 'ventas/registrar_compra') (EJEMPLO)
+
 //un evento para cada boton, actuando como un "a" pero es un formulario para pasar info
 cambioweb1.addEventListener("click", () => {
+  document.getElementById("resultado").value = ciudadUrl;
+  document.getElementById("punto").value = codnUrl;
   document.getElementById("form2").setAttribute('action', '../MasCercano/index.html');
   document.getElementById("form2").submit();
   alert("coordenada: "+codnUrl);
 });
 
 cambioweb2.addEventListener("click", () => {
+  document.getElementById("resultado").value = ciudadUrl;
+  document.getElementById("punto").value = codnUrl;
   document.getElementById("form2").setAttribute('action', '../Contacto/index.html');
   document.getElementById("form2").submit();
 });
