@@ -50,11 +50,12 @@ async function ejecucion(){
             
             var marcar = new MasCercano(dir, nombre, cordeLat, cordeLng, estado);
             //guardamos HTML en variable con cada servicio
-            imprimir += "<a href='https://maps.google.com/?q="+cordeLat+","+cordeLng+"' target='_blank'><div>Nombre: "+marcar.nom+"| <br>Dirección: "+marcar.calle+"| <br>Estado: "+marcar.esta+"</div><div>--</div></a>";
+            //imprimir += "<a href='https://maps.google.com/?q="+cordeLat+","+cordeLng+"' target='_blank'><div>Nombre: "+marcar.nom+"| <br>Dirección: "+marcar.calle+"| <br>Estado: "+marcar.esta+"</div><div>--</div></a>";
+            imprimir += `<div class="row pepe"><div class="col-8">${marcar.nom} <br>${marcar.esta} </div><div class="col-2">ICONO 1</div><div class="col-2">ICONO 2</div></div>`;
             ++respuestas;
         }
     });
-    imprimir += '<input type="button" value="Volver atrás" onClick="window.location.reload()">';
+    imprimir += '<input type="button" value="recargar" class="btn btn-info" onClick="window.location.reload()">';
     //generamos voton para recargar página y imprimo contenido en pantalla
     mensaje.innerHTML = imprimir;
 })}

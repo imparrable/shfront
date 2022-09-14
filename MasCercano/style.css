@@ -35,3 +35,7 @@ nav{
     background: linear-gradient(to bottom right, #8cf8b8, #2234f9);
     min-width: 200px;
 }
+.pepe{
+    border: black solid 1px;
+    margin-bottom: 2rem;
+}
