@@ -2,32 +2,31 @@ var elements = document.querySelectorAll('.caja');
 
 anime({
     targets: elements,
-    translateX: 444,
+    translateX: "30vw",
     loop: true,
     direction: 'alternate',
     easing: 'easeInElastic(1, .6)',
-    delay: 350,
+    delay: function(el, i, l) {
+      return i * 250;
+    },
     rotate: {
       value: 360,
-      duration: 1800,
+      duration: 4000,
       easing: 'easeInOutSine'
     },
+    borderRadius: function() { return ['90%', anime.random(10, 65) + '%']; },
     scale: {
-      value: 2,
-      duration: 1600,
-      delay: 800,
+      value: 2000,
+      duration: 600,
+      delay: 500,
       easing: 'easeInOutQuart'
     },
-    borderRadius: function() { return ['50%', anime.random(10, 35) + '%']; },
-    scale: function(el, i, l) {
-      return (2*l - 10*i) + .25;
-  }
 });
 
   var pepe = setTimeout(()=>{
     var p = document.getElementById("fuera");
     p.remove();
-  },5000);
+  },250000);
 //   function parar() => {
 //         setTimeout(() => {
 //             document.getElementById("container").parentNode.removeChild(elements);
