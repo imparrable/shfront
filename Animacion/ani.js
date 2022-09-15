@@ -16,7 +16,7 @@ anime({
     },
     borderRadius: function() { return ['90%', anime.random(10, 65) + '%']; },
     scale: {
-      value: 2000,
+      value: 200,
       duration: 600,
       delay: 500,
       easing: 'easeInOutQuart'
