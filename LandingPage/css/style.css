@@ -113,7 +113,7 @@ p.lead {
 
 .btn-group-lg>.btn,
 .btn-lg {
-    padding: 0.8rem 1rem;
+    padding: 0.7rem 1rem;
     font-size: 15px;
 }
 
@@ -350,7 +350,8 @@ header {
 
 .perspective-phone {
     position: relative;
-    z-index: -1;
+    
+    
 }
 
 @media (min-width:992px) {
@@ -613,3 +614,11 @@ header {
         width: 100px;
         
      }
+
+.texto{
+    
+    text-align: center;
+    color: #00c3ff;
+}
+
+
