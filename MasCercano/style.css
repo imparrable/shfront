@@ -39,11 +39,11 @@ nav{
     border: black solid 1px;
     margin-bottom: 2rem;
     padding: 0.5rem;
-    background: linear-gradient(133deg, #0cead8, #0c2eea);
+    background: linear-gradient(89deg, #8cf8b8, #2234f9, #48ea0c);
     background-size: 400% 400%;
-    -webkit-animation: AnimationNamepepe 9s ease infinite;
-    -moz-animation: AnimationNamepepe 9s ease infinite;
-    animation: AnimationNamepepe 9s ease infinite;
+    -webkit-animation: AnimationNamepepe 11s ease infinite;
+    -moz-animation: AnimationNamepepe 11s ease infinite;
+    animation: AnimationNamepepe 11s ease infinite;
 }
 @-webkit-keyframes AnimationNamepepe {
     0%{background-position:22% 0%}
