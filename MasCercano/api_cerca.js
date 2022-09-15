@@ -51,7 +51,7 @@ async function ejecucion(){
             var marcar = new MasCercano(dir, nombre, cordeLat, cordeLng, estado);
             //guardamos HTML en variable con cada servicio
             //imprimir += "<a href='https://maps.google.com/?q="+cordeLat+","+cordeLng+"' target='_blank'><div>Nombre: "+marcar.nom+"| <br>Dirección: "+marcar.calle+"| <br>Estado: "+marcar.esta+"</div><div>--</div></a>";
-            imprimir += `<div class="row pepe" style="border:solid black 1px;"><div class="col-9">${marcar.nom} || ${marcar.esta} </div><div class="col-3">ICONO 2</div></div>`;
+            imprimir += `<div class="row pepe" style="border:solid black 1px;"><div class="col-9">${marcar.nom} || ${marcar.esta} </div><div class="col-3"><img src="map-marker.png" alt="Maps" onclick="AbreMaps(${cordeLat},${cordeLng})"></div></div>`;
             ++respuestas;
         }
     });
@@ -80,3 +80,7 @@ async function ejecucion(){
         }
         
     }
+    async function AbreMaps(latit,longit) { 
+        var urlmapa = "https://maps.google.com/?q="+latit+","+longit;
+        window.open(urlmapa, '_blank');
+     }
