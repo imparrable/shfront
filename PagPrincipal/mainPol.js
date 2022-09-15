@@ -1,4 +1,3 @@
-
 var Url = new URL(window.location.href);
 var ciudad = Url.search.replace("?", "").replace("=", "").replace("city", "");
 // var id_carta = 0;
@@ -16,7 +15,7 @@ function showServices(services) {
         ${service.name}
         <div class="callButton">
         <button type="button" class="buttonPhone">
-         <a href="tel:${service.telephone}"><img src="./iconos/llamada-telefonica.png" height="41px" width="40px"></a>
+         <a href="tel:${service.telephone}"><img src="./iconos/telefono (1).png" height="41px" width="40px"></a>
         </button>
          </a>
        </div>
@@ -35,8 +34,8 @@ function showServices(services) {
                <div class="links2">
                  ${service.name}
                  <div class="callButton">
-                 <button type="button" class="buttonPhone">
-                  <a href="tel:${service.telephone}"><img src="./iconos/llamada-telefonica.png" height="41px" width="40px"></a>
+                 <button type="button" class="buttonPhone2">
+                  <a href="tel:${service.telephone}"><img src="./iconos/telefono (1).png" height="41px" width="40px"></a>
                  </button>
                   </a>
                 </div>
@@ -54,8 +53,8 @@ function showServices(services) {
              <div class="links3">
              ${service.name}
              <div class="callButton">
-             <button type="button" class="buttonPhone">
-              <a href="tel:${service.telephone}"><img src="./iconos/llamada-telefonica.png" height="41px" width="40px"></a>
+             <button type="button" class="buttonPhone3">
+              <a href="tel:${service.telephone}"><img src="./iconos/telefono (1).png" height="41px" width="40px"></a>
              </button>
               </a>
             </div>
@@ -73,8 +72,8 @@ function showServices(services) {
            <div class="links4">
            ${service.name}
            <div class="callButton">
-           <button type="button" class="buttonPhone">
-            <a href="tel:${service.telephone}"><img src="./iconos/llamada-telefonica.png" height="41px" width="40px"></a>
+           <button type="button" class="buttonPhone4">
+            <a href="tel:${service.telephone}"><img src="./iconos/telefono (1).png" height="41px" width="40px"></a>
            </button>
             </a>
           </div>
@@ -86,4 +85,3 @@ function showServices(services) {
 //     document.getElementById("MyElement").className += "volver";
 //     document.getElementById().classList.add("volver");
 // };) Comentado por si queremos cambiar la clase para girar con JS
-
