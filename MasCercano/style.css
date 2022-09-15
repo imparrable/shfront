@@ -39,6 +39,26 @@ nav{
     border: black solid 1px;
     margin-bottom: 2rem;
     padding: 0.5rem;
+    background: linear-gradient(133deg, #0cead8, #0c2eea);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationNamepepe 9s ease infinite;
+    -moz-animation: AnimationNamepepe 9s ease infinite;
+    animation: AnimationNamepepe 9s ease infinite;
+}
+@-webkit-keyframes AnimationNamepepe {
+    0%{background-position:22% 0%}
+    50%{background-position:79% 100%}
+    100%{background-position:22% 0%}
+}
+@-moz-keyframes AnimationNamepepe {
+    0%{background-position:22% 0%}
+    50%{background-position:79% 100%}
+    100%{background-position:22% 0%}
+}
+@keyframes AnimationNamepepe {
+    0%{background-position:22% 0%}
+    50%{background-position:79% 100%}
+    100%{background-position:22% 0%}
 }
 img{
     max-width: 100%;
