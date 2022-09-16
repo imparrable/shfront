@@ -1,18 +1,20 @@
 #fuera {
-    background: linear-gradient(133deg, #005cf5, #00f5e1);
+    background: linear-gradient(133deg, #00f5e1, #0e13df);
     height: 100vh;
+    -webkit-animation: AnimationName 10s ease infinite;
+    -moz-animation: AnimationName 10s ease infinite;
+    animation: AnimationName 10s ease infinite;
 }
 .caja{
-    width: 100px;
-    height: 100px;
     position: absolute;
-    top: 30vh; left: 30vw;
+    top: 50vh; left: 50vw;
     align-items: center;
     background: linear-gradient(131deg, #03231b, #0e13df, #0edfc5);
     background-size: 600% 600%;
-    -webkit-animation: AnimationName 1s ease infinite;
-    -moz-animation: AnimationName 1s ease infinite;
-    animation: AnimationName 1s ease infinite;
+    -webkit-animation: AnimationName 10s ease infinite;
+    -moz-animation: AnimationName 10s ease infinite;
+    animation: AnimationName 10s ease infinite;
+    align-content: center;
 }
 
 @-webkit-keyframes AnimationName {
@@ -30,3 +32,18 @@
     50%{background-position:94% 100%}
     100%{background-position:7% 0%}
 }
+ input{
+    background: linear-gradient(131deg, #df0e19, #0edfc5);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 10s ease infinite;
+    -moz-animation: AnimationName 10s ease infinite;
+    animation: AnimationName 10s ease infinite;
+    align-content: center;
+    text-align: center;
+    width: 100%;
+    color: #03231b;
+ }
+ input[type="range"]::-moz-range-progress {
+    background-color: #43e5f7; 
+  }
+  in
