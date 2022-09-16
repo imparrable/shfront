@@ -1,11 +1,12 @@
 
 let Url = (new URL(document.location)).searchParams;
-const ciudadUrl = Url.get("city");
+var ciudadUrl = Url.get("city");
 const codnUrl = Url.get("latlng");
 var id_carta = 0;
 console.log(ciudadUrl+" -- "+codnUrl);
 let cambioweb1 = document.getElementById("mascerca");
 let cambioweb2 = document.getElementById("contact");
+ciudadUrl = "barcelona";
 //formulario.setAttribute('action', 'ventas/registrar_compra') (EJEMPLO)
 
 
@@ -44,7 +45,7 @@ function showServices(services) {
      </div>`;
       });
     }
-    fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Seguridad")
+    fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Seguridad"))
 
   .then((data) => data.json())
   .then((services) => showServices2(services));
@@ -64,7 +65,7 @@ function showServices(services) {
               </div>`;        
        });
     }
-    fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Reparaciones")
+    fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Reparaciones"))
 
     .then((data) => data.json())
     .then((services) => showServices3(services));
@@ -84,7 +85,7 @@ function showServices(services) {
                 </div>`;        
          });
       }
-      fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Mascotas")
+      fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Mascotas"))
 
     .then((data) => data.json())
     .then((services) => showServices4(services));
