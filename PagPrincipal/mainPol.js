@@ -25,7 +25,8 @@ cambioweb2.addEventListener("click", () => {
   document.getElementById("form2").submit();
 });
 //generacion del HTML
-fetch("https://4le956zpa7.execute-api.us-west-2.amazonaws.com/sh-api1/services?city="+ciudadUrl)
+//generacion del HTML
+fetch("https://4le956zpa7.execute-api.us-west-2.amazonaws.com/sh-api1/services?city="+ciudadUrl+"&category=Salud")
   .then((data) => data.json())
   .then((services) => showServices(services));
 
@@ -44,7 +45,9 @@ function showServices(services) {
      </div>`;
       });
     }
-      fetch("https://4le956zpa7.execute-api.us-west-2.amazonaws.com/sh-api1/services?city=Barcelona&category=Seguridad")
+
+     fetch("https://4le956zpa7.execute-api.us-west-2.amazonaws.com/sh-api1/services?city="+ciudadUrl+"&category=Seguridad")
+
 
   .then((data) => data.json())
   .then((services) => showServices2(services));
@@ -64,7 +67,7 @@ function showServices(services) {
               </div>`;        
        });
     }
-    fetch("https://4le956zpa7.execute-api.us-west-2.amazonaws.com/sh-api1/services?city=Barcelona&category=Reparaciones")
+    fetch("https://4le956zpa7.execute-api.us-west-2.amazonaws.com/sh-api1/services?city="+ciudadUrl+"&category=Reparaciones")
 
     .then((data) => data.json())
     .then((services) => showServices3(services));
@@ -83,9 +86,10 @@ function showServices(services) {
           </div>`; 
     });
   }
-    fetch("https://4le956zpa7.execute-api.us-west-2.amazonaws.com/sh-api1/services?city=Barcelona&category=Mascotas")
+    fetch("https://4le956zpa7.execute-api.us-west-2.amazonaws.com/sh-api1/services?city="+ciudadUrl+"&category=Mascotas")
 
     .then((data) => data.json())
+
     .then((services) => showServices4(services));
      function showServices4(services) {
      services.forEach((service) => {
@@ -102,3 +106,6 @@ function showServices(services) {
         </div>`;   
  });
 }
+
+
+

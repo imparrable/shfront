@@ -35,3 +35,33 @@ nav{
     background: linear-gradient(to bottom right, #8cf8b8, #2234f9);
     min-width: 200px;
 }
+.pepe{
+    border: black solid 1px;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+    background: linear-gradient(89deg, #8cf8b8, #2234f9, #48ea0c);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationNamepepe 11s ease infinite;
+    -moz-animation: AnimationNamepepe 11s ease infinite;
+    animation: AnimationNamepepe 11s ease infinite;
+}
+@-webkit-keyframes AnimationNamepepe {
+    0%{background-position:22% 0%}
+    50%{background-position:79% 100%}
+    100%{background-position:22% 0%}
+}
+@-moz-keyframes AnimationNamepepe {
+    0%{background-position:22% 0%}
+    50%{background-position:79% 100%}
+    100%{background-position:22% 0%}
+}
+@keyframes AnimationNamepepe {
+    0%{background-position:22% 0%}
+    50%{background-position:79% 100%}
+    100%{background-position:22% 0%}
+}
+img{
+    max-width: 100%;
+    max-height:3rem;
+    float: right;
+}

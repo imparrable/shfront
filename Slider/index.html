@@ -61,7 +61,7 @@
                 Sin registros, sin pagos, de forma anónima.</b>
               </div>
               
-                <a class="boton-19" href="../PagPrincipal/indexPol.html" role="button">¡Empecemos!</a>
+                <a class="boton-19" id="btn1">¡Empecemos!</a>
             </div>
           </div>
         </div>
@@ -69,9 +69,13 @@
     </div>
     <!--/owl-slide-->
   </div>
-
+  <form action="../PagPrincipal/indexPol.html" method="get" id="formulario1">
+    <input type="hidden" name="city" id="resultado">
+    <input type="hidden" name="latlng" id="punto">
+  </form>
 
   <!-- partial -->
+  <script src="../Geo/geo.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
   <script src="./script.js"></script>

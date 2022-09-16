@@ -1,27 +1,47 @@
 #fuera {
-    background: linear-gradient(133deg, #005cf5, #00f5e1);
-    background-size: 400% 400%;
+    background: linear-gradient(133deg, #00f5e1, #0e13df);
     height: 100vh;
-
-    -webkit-animation: AnimationNameWEB 3s ease infinite;
-    animation: AnimationNameWEB 3s ease infinite;
+    position: absolute;
+    -webkit-animation: AnimationName 10s ease infinite;
+    -moz-animation: AnimationName 10s ease infinite;
+    animation: AnimationName 10s ease infinite;
+    z-index: 999;
 }
 .caja{
-    width: 100px;
-    height: 100px;
-    background-color: rgb(209, 51, 31);
     position: absolute;
-    top: 30vh; left: 30vw;
+    top: 40vh; left: 25vw;
     align-items: center;
+    background: linear-gradient(131deg, #03231b, #0e13df, #0edfc5);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 10s ease infinite;
+    -moz-animation: AnimationName 10s ease infinite;
+    animation: AnimationName 10s ease infinite;
+    align-content: center;
 }
 
-@-webkit-keyframes AnimationNameWEB {
-    0%{background-position:23% 0%}
-    50%{background-position:78% 100%}
-    100%{background-position:23% 0%}
+@-webkit-keyframes AnimationName {
+    0%{background-position:7% 0%}
+    50%{background-position:94% 100%}
+    100%{background-position:7% 0%}
 }
-@keyframes AnimationNameWEB {
-    0%{background-position:23% 0%}
-    50%{background-position:78% 100%}
-    100%{background-position:23% 0%}
+@-moz-keyframes AnimationName {
+    0%{background-position:7% 0%}
+    50%{background-position:94% 100%}
+    100%{background-position:7% 0%}
 }
+@keyframes AnimationName {
+    0%{background-position:7% 0%}
+    50%{background-position:94% 100%}
+    100%{background-position:7% 0%}
+}
+ input{
+    background: linear-gradient(131deg, #df0e19, #0edfc5);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 10s ease infinite;
+    -moz-animation: AnimationName 10s ease infinite;
+    animation: AnimationName 10s ease infinite;
+    align-content: center;
+    text-align: center;
+    width: 100%;
+    color: #03231b;
+ }
