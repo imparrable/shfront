@@ -6,8 +6,6 @@ var id_carta = 0;
 console.log(ciudadUrl+" -- "+codnUrl);
 let cambioweb1 = document.getElementById("mascerca");
 let cambioweb2 = document.getElementById("contact");
-//formulario.setAttribute('action', 'ventas/registrar_compra') (EJEMPLO)
-
 
 //un evento para cada boton, actuando como un "a" pero es un formulario para pasar info
 cambioweb1.addEventListener("click", () => {
@@ -24,7 +22,6 @@ cambioweb2.addEventListener("click", () => {
   document.getElementById("form2").setAttribute('action', '../Contacto/index.html');
   document.getElementById("form2").submit();
 });
-//generacion del HTML
 //generacion del HTML
 fetch("https://4le956zpa7.execute-api.us-west-2.amazonaws.com/sh-api1/services?city="+ciudadUrl+"&category=Salud")
   .then((data) => data.json())
