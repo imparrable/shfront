@@ -1,3 +1,4 @@
+
 let Url = (new URL(document.location)).searchParams;
 const ciudadUrl = Url.get("city");
 const codnUrl = Url.get("latlng");
@@ -6,6 +7,7 @@ console.log(ciudadUrl+" -- "+codnUrl);
 let cambioweb1 = document.getElementById("mascerca");
 let cambioweb2 = document.getElementById("contact");
 //formulario.setAttribute('action', 'ventas/registrar_compra') (EJEMPLO)
+
 
 //un evento para cada boton, actuando como un "a" pero es un formulario para pasar info
 cambioweb1.addEventListener("click", () => {
@@ -43,7 +45,9 @@ function showServices(services) {
      </div>`;
       });
     }
-      fetch("https://4le956zpa7.execute-api.us-west-2.amazonaws.com/sh-api1/services?city="+ciudadUrl+"&category=Seguridad")
+
+     fetch("https://4le956zpa7.execute-api.us-west-2.amazonaws.com/sh-api1/services?city="+ciudadUrl+"&category=Seguridad")
+
 
   .then((data) => data.json())
   .then((services) => showServices2(services));
@@ -85,6 +89,7 @@ function showServices(services) {
     fetch("https://4le956zpa7.execute-api.us-west-2.amazonaws.com/sh-api1/services?city="+ciudadUrl+"&category=Mascotas")
 
     .then((data) => data.json())
+
     .then((services) => showServices4(services));
      function showServices4(services) {
      services.forEach((service) => {
@@ -101,3 +106,6 @@ function showServices(services) {
         </div>`;   
  });
 }
+
+
+
