@@ -1,13 +1,15 @@
 #fuera {
     background: linear-gradient(133deg, #00f5e1, #0e13df);
     height: 100vh;
+    position: absolute;
     -webkit-animation: AnimationName 10s ease infinite;
     -moz-animation: AnimationName 10s ease infinite;
     animation: AnimationName 10s ease infinite;
+    z-index: 999;
 }
 .caja{
     position: absolute;
-    top: 50vh; left: 50vw;
+    top: 40vh; left: 25vw;
     align-items: center;
     background: linear-gradient(131deg, #03231b, #0e13df, #0edfc5);
     background-size: 600% 600%;
@@ -43,7 +45,3 @@
     width: 100%;
     color: #03231b;
  }
- input[type="range"]::-moz-range-progress {
-    background-color: #43e5f7; 
-  }
-  in
