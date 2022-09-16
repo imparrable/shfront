@@ -1,6 +1,14 @@
 
+<<<<<<< HEAD
 body {
  
+=======
+
+
+
+
+body {
+>>>>>>> branchPol
   background-color: #2234f9;
   display: flex;
   flex-direction: column;
@@ -51,7 +59,7 @@ body {
   ;
 }
 .boton{
-  font-family: 'Questrial', sans-serif;
+  
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -153,7 +161,7 @@ border: none;
     height: 40px;
     width: 40px;
     background-color:transparent;
-    left: 230px;
+    left: 240px;
     top: -42px;
     border: none;
     }
@@ -162,7 +170,7 @@ border: none;
       height: 40px;
       width: 40px;
       background-color:transparent;
-      left: 240px;
+      left: 270px;
       top: -42px;
       border: none;
       }

@@ -1,11 +1,12 @@
 
 let Url = (new URL(document.location)).searchParams;
-const ciudadUrl = Url.get("city");
+var ciudadUrl = Url.get("city");
 const codnUrl = Url.get("latlng");
 var id_carta = 0;
 console.log(ciudadUrl+" -- "+codnUrl);
 let cambioweb1 = document.getElementById("mascerca");
 let cambioweb2 = document.getElementById("contact");
+ciudadUrl = "barcelona";
 //formulario.setAttribute('action', 'ventas/registrar_compra') (EJEMPLO)
 
 
@@ -44,7 +45,11 @@ function showServices(services) {
      </div>`;
       });
     }
+<<<<<<< HEAD
     fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Seguridad")
+=======
+    fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Seguridad"))
+>>>>>>> branchPol
 
   .then((data) => data.json())
   .then((services) => showServices2(services));
@@ -64,6 +69,7 @@ function showServices(services) {
               </div>`;        
        });
     }
+<<<<<<< HEAD
     fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Reparaciones")
 
   .then((data) => data.json())
@@ -85,6 +91,29 @@ function showServices(services) {
        });
     }
       fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Mascotas")
+=======
+    fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Reparaciones"))
+
+    .then((data) => data.json())
+    .then((services) => showServices3(services));
+  
+      function showServices3(services) {
+      const container3 = document.querySelector(".desplegable3");
+         services.forEach((service) => {
+             container3.innerHTML += ` 
+                 <div class="links3">
+                   ${service.name}
+                   <div class="callButton">
+                   <button type="button" class="buttonPhone3">
+                    <a href="tel:${service.telephone}"><img src="./iconos/telefono.png" height="41px" width="40px"></a>
+                   </button>
+                    </a>
+                  </div>
+                </div>`;        
+         });
+      }
+      fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Mascotas"))
+>>>>>>> branchPol
 
     .then((data) => data.json())
     .then((services) => showServices4(services));
