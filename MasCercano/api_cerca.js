@@ -2,20 +2,22 @@ const KEY = "AIzaSyA2TcYB46x8rio7ZG1ivFm5ah_fAzPjJik";
 var mensaje = document.getElementById("modifica");
 let Url2 = (new URL(document.location)).searchParams;
 const ciudadUrl2 = Url2.get("city");
-const codnUrl2 = Url2.get("latlng");
-console.log("corde: "+codnUrl2);
+const servicio = Url2.get("servicio");
+var codnUrl2;
 
-
-var servicio, urlcerca;
+var urlcerca;
 var respuestas = 0;
 //cordeLAT/cordeLng es para ubicacion del local
 var dir, nombre, cordeLat, cordeLng, estado, imprimir ="";
 
 
-   async function servicio_elegido(service){
-        servicio = service;
+   async function servicio_elegido(){
+        navigator.geolocation.getCurrentPosition(tomadatos);
+        function tomadatos(pos){    
+        codnUrl2 = pos.coords.latitude+","+pos.coords.longitude;
         urlcerca = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+codnUrl2+"&radius=5000&type="+servicio+"&key="+KEY;
         ejecucion();
+        }
     }
     // function aquiEstoy(resultado){
     //     // verificar si se guarda y no pide autorizacion a cada peticion, sino generar URLSearchParams
