@@ -5,7 +5,6 @@ var id_carta = 0;
 console.log(ciudadUrl+" -- "+codnUrl);
 let cambioweb1 = document.getElementById("mascerca");
 let cambioweb2 = document.getElementById("contact");
-ciudadUrl = "barcelona";
 //formulario.setAttribute('action', 'ventas/registrar_compra') (EJEMPLO)
 
 
@@ -42,7 +41,7 @@ function showServices(services) {
          </a>
        </div>`;
       });
-      container.innerHTML += "<div class='links'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone'><a href='../MasCercano/index.html?servicio=salud&latlng="+codnUrl+"'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
+      container.innerHTML += "<div class='links'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone'><a href='../MasCercano/index.html?servicio=hospital'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
     }
     fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Seguridad")
 
@@ -62,7 +61,7 @@ function showServices(services) {
                   </a>
                 </div>`;        
        });
-       container2.innerHTML += "<div class='links2'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone2'><a href='../MasCercano/index.html?servicio=seguridad&latlng="+codnUrl+"'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
+       container2.innerHTML += "<div class='links2'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone2'><a href='../MasCercano/index.html?servicio=police'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
     }
     fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Reparaciones")
 
@@ -82,7 +81,7 @@ function showServices(services) {
                   </a>
                 </div>`;        
        });
-       container3.innerHTML += "<div class='links3'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone3'><a href='../MasCercano/index.html?servicio=reparaciones&latlng="+codnUrl+"'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
+       container3.innerHTML += "<div class='links3'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone3'><a href='../MasCercano/index.html?servicio=locksmith'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
     }
       fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Mascotas")
 
@@ -101,5 +100,5 @@ function showServices(services) {
             </a>
           </div>`;   
  });
- container4.innerHTML += "<div class='links4'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone4'><a href='../MasCercano/index.html?servicio=mascotas&latlng="+codnUrl+"'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
+ container4.innerHTML += "<div class='links4'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone4'><a href='../MasCercano/index.html?servicio=veterinary_care'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
 }

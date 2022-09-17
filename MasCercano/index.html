@@ -6,58 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartHelp/MasCercano</title>
     <link rel="stylesheet" href="style.css">
+    <script src="../Animacion/anime-master/lib/anime.js"></script>
     <link rel="stylesheet" href="../bootstrap-5.2.1-dist/css/bootstrap.min.css">
     <script src="../bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../Animacion/styleR.css">
+    <link rel="stylesheet" href="../LandingPage/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../LandingPage/css/style.css">
 </head>
 <body>
-    <div class="container-sm">
+      <!-- Inicio de la animacion -->
+  <div class="container-fluid" id="fuera">
+    <div class="caja">
+        <img src="../PagPrincipal/iconos/SmartHelp-logo.png" alt="smh">
+        <div>
+            <input class="temp" value="0" style="" type="range">
+        </div>
+    </div>
+</div>
+    <main class="container-fluid">
+      <div class="container-xl" style="border-bottom: 2px solid black; margin-bottom: 3rem;">
         <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="container-fluid">
-                    <h3 class="navbar-brand">Menú principal</h3>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="../PagPrincipal/indexPol.html">Principal</a>
-                        <a class="nav-link" href="#">Contacto</a>
-                        <a class="nav-link" href="../Slider/index.html">Localizacion</a>
-                        </div>
-                    </div>
+            <div class="col-md-12">
+                <nav class="navbar navbar-dark navbar-expand-lg">
+                    <a class="navbar-brand" href="index.html"><img src="../LandingPage/images/shlogo.png" class="img-fluid"
+                            alt="logo"></a> <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbar" aria-controls="navbar" aria-expanded="false"
+                        aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"> <a class="nav-link active" href="#">INICIO</a> </li>
+                            <li class="nav-item"> <a class="nav-link" href="../PagPrincipal/indexPol.html">LOCALIZAME</a> </li>
+                            <li class="nav-item"> <a class="nav-link" href="../Slider/index.html">INFORMACION DE LA APP</a> </li>
+                            <li class="nav-item"> <a class="nav-link" href="../Contacto/index.html">CONTACTO & FAQ</a> </li>                            
+                        </ul>
                     </div>
                 </nav>
             </div>
-            <div class="col-3"></div>
         </div>
     </div>
     <div class="container-sm" id="modifica">
-        <h2 id="encabezado">
-            Indica el servicio:
-        </h2>
-        <h4>En un radio de 5km</h4>
-        <div id="opc1" class="selector" onclick="servicio_elegido('hospital')">
-            Hospitales
-        </div>
-        <div id="opc2" class="selector" onclick="servicio_elegido('veterinary_care')">
-            Veterinarios
-        </div>
-        <div id="opc3" class="selector" onclick="servicio_elegido('fire_station')">
-            Bomberos
-        </div>
-        <div id="opc4" class="selector" onclick="servicio_elegido('police')">
-            Policía
-        </div>
-        <div id="opc5" class="selector" onclick="servicio_elegido('doctor')">
-            Salud
-        </div>
-        <div id="opc6" class="selector" onclick="servicio_elegido('pharmacy')">
-            Farmácias
-        </div>
-
     </div>
-    <script src="api_cerca.js"></script>
+    <input type="hidden" name="latlng" id="coord_ciudad">
+    <script src="../Animacion/ani.js"></script>
+    <script src="../LandingPage/js/jquery-3.2.1.min.js"></script>
+    <script src="../LandingPage/js/script.js"></script>
+    <script src="../LandingPage/js/owl.carousel.min.js"></script>
+    <script src="../LandingPage/js/bootstrap.bundle.min.js"></script>
+    <script src="api_cerca.js" onload="servicio_elegido()"></script>
 </body>
 </html>
