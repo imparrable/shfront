@@ -1,7 +1,6 @@
 
-let Url = (new URL(document.location)).searchParams;
-var ciudadUrl = Url.get("city");
-const codnUrl = Url.get("latlng");
+var ciudadUrl = document.getElementById("resultado").value;
+var codnUrl = document.getElementById("punto").value;
 var id_carta = 0;
 console.log(ciudadUrl+" -- "+codnUrl);
 let cambioweb1 = document.getElementById("mascerca");
@@ -31,7 +30,7 @@ fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+c
   .then((services) => showServices(services));
 
 function showServices(services) {
-  const container = document.querySelector(".desplegable");
+  var container = document.querySelector(".desplegable");
          services.forEach((service) => {
     container.innerHTML += ` 
         <div class="links">
@@ -41,9 +40,9 @@ function showServices(services) {
          <a href="tel:${service.telephone}"><img src="./iconos/telefono.png" height="41px" width="40px"></a>
         </button>
          </a>
-       </div>
-     </div>`;
+       </div>`;
       });
+      container.innerHTML += "<div class='links'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone'><a href='../MasCercano/index.html?servicio=salud&latlng="+codnUrl+"'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
     }
     fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Seguridad")
 
@@ -51,7 +50,7 @@ function showServices(services) {
   .then((services) => showServices2(services));
 
     function showServices2(services) {
-    const container2 = document.querySelector(".desplegable2");
+    var container2 = document.querySelector(".desplegable2");
        services.forEach((service) => {
            container2.innerHTML += ` 
                <div class="links2">
@@ -61,9 +60,9 @@ function showServices(services) {
                   <a href="tel:${service.telephone}"><img src="./iconos/telefono.png" height="41px" width="40px"></a>
                  </button>
                   </a>
-                </div>
-              </div>`;        
+                </div>`;        
        });
+       container2.innerHTML += "<div class='links2'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone2'><a href='../MasCercano/index.html?servicio=seguridad&latlng="+codnUrl+"'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
     }
     fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Reparaciones")
 
@@ -71,7 +70,7 @@ function showServices(services) {
   .then((services) => showServices3(services));
 
     function showServices3(services) {
-    const container3 = document.querySelector(".desplegable3");
+    var container3 = document.querySelector(".desplegable3");
        services.forEach((service) => {
            container3.innerHTML += ` 
                <div class="links3">
@@ -81,17 +80,17 @@ function showServices(services) {
                   <a href="tel:${service.telephone}"><img src="./iconos/telefono.png" height="41px" width="40px"></a>
                  </button>
                   </a>
-                </div>
-              </div>`;        
+                </div>`;        
        });
+       container3.innerHTML += "<div class='links3'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone3'><a href='../MasCercano/index.html?servicio=reparaciones&latlng="+codnUrl+"'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
     }
       fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Mascotas")
 
     .then((data) => data.json())
     .then((services) => showServices4(services));
      function showServices4(services) {
-     services.forEach((service) => {
-      const container4 = document.querySelector(".desplegable4");
+      var container4 = document.querySelector(".desplegable4");
+      services.forEach((service) => {
        container4.innerHTML += ` 
            <div class="links4">
            ${service.name}
@@ -100,7 +99,7 @@ function showServices(services) {
             <a href="tel:${service.telephone}"><img src="./iconos/telefono.png" height="41px" width="40px"></a>
            </button>
             </a>
-          </div>
-        </div>`;   
+          </div>`;   
  });
+ container4.innerHTML += "<div class='links4'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone4'><a href='../MasCercano/index.html?servicio=mascotas&latlng="+codnUrl+"'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
 }
