@@ -15,7 +15,7 @@ var dir, nombre, cordeLat, cordeLng, estado, imprimir ="";
         navigator.geolocation.getCurrentPosition(tomadatos);
         function tomadatos(pos){    
         codnUrl2 = pos.coords.latitude+","+pos.coords.longitude;
-        urlcerca = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+codnUrl2+"&radius=5000&type="+servicio+"&key="+KEY;
+        urlcerca = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+codnUrl2+"&radius=5000&type="+servicio+"&key="+KEY;
         ejecucion();
         }
     }
