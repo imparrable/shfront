@@ -2,20 +2,22 @@ const KEY = "AIzaSyA2TcYB46x8rio7ZG1ivFm5ah_fAzPjJik";
 var mensaje = document.getElementById("modifica");
 let Url2 = (new URL(document.location)).searchParams;
 const ciudadUrl2 = Url2.get("city");
-const codnUrl2 = Url2.get("latlng");
-console.log("corde: "+codnUrl2);
+const servicio = Url2.get("servicio");
+var codnUrl2;
 
-
-var servicio, urlcerca;
+var urlcerca;
 var respuestas = 0;
 //cordeLAT/cordeLng es para ubicacion del local
 var dir, nombre, cordeLat, cordeLng, estado, imprimir ="";
 
 
-   async function servicio_elegido(service){
-        servicio = service;
-        urlcerca = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+codnUrl2+"&radius=5000&type="+servicio+"&key="+KEY;
+   async function servicio_elegido(){
+        navigator.geolocation.getCurrentPosition(tomadatos);
+        function tomadatos(pos){    
+        codnUrl2 = pos.coords.latitude+","+pos.coords.longitude;
+        urlcerca = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+codnUrl2+"&radius=5000&type="+servicio+"&key="+KEY;
         ejecucion();
+        }
     }
     // function aquiEstoy(resultado){
     //     // verificar si se guarda y no pide autorizacion a cada peticion, sino generar URLSearchParams
@@ -51,7 +53,7 @@ async function ejecucion(){
             var marcar = new MasCercano(dir, nombre, cordeLat, cordeLng, estado);
             //guardamos HTML en variable con cada servicio
             //imprimir += "<a href='https://maps.google.com/?q="+cordeLat+","+cordeLng+"' target='_blank'><div>Nombre: "+marcar.nom+"| <br>Dirección: "+marcar.calle+"| <br>Estado: "+marcar.esta+"</div><div>--</div></a>";
-            imprimir += `<div class="row pepe" style="border:solid black 1px;"><div class="col-9">${marcar.nom} || ${marcar.esta} </div><div class="col-3"><img src="map-marker.png" alt="Maps" onclick="AbreMaps(${cordeLat},${cordeLng})"></div></div>`;
+            imprimir += `<div class="row pepe" style="border:solid black 1px;"><div class="col-9">${marcar.nom} || <strong>${marcar.esta}</strong> </div><div class="col-3"><img src="map-marker.png" alt="Maps" onclick="AbreMaps(${cordeLat},${cordeLng})"></div></div>`;
             ++respuestas;
         }
     });
