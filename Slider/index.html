@@ -1,117 +1,85 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>SMARTHELP | Introducción</title>
+  <title>SmartHelp | Tu App para emergencias</title>
+  <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
+  <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
+  <link rel="stylesheet"
+    href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css'>
   <link rel="stylesheet" href="./style.css">
 
 </head>
+
 <body>
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Introducción</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
-  </head>
-  <body>
-
-    <div class="wrapper">
-
-      <!-- Nike 19 -->
-      <div class="card card--19">
-        <div class="card__header card__header--19">
-          <img src="titulo.png" alt="Nike 19" class="card__image card__will-animate">
-          <div></div>
-
-          <img src="s1.png" alt="Nike" class="card__logo card__will-animate">
-
-          <span class="card__price card__will-animate"></span>
-
-          <h1 class="card__title card__will-animate"></h1>
-          
-          <span class="card__subtitle card__will-animate"></span>
-
-        </div>
-
-        <div class="card__body">
-          <img src="emp.png" alt="Nike 19" class="card__image card__will-animate">
-          <div class="card__wish-list card__wish-list--19 card__will-animate">Bienvenido a SmartHelp, con esta aplicación en tu bolsillo dejarás de preocuparte por pensar a qué número debes llamar en caso de emergencia.</div>
-
-          <span class="card__category card__will-animate"></span>
-        </div>
-      </div>
-
-      <!-- Nike Solstice -->
-      <div class="card card--solstice">
-        <div class="card__header card__header--solstice">
-          <img src="todo.png" alt="Nike 19" class="card__image card__will-animate">
-          <div></div>
-
-          <img src="f2.png" alt="Nike" class="card__logo card__will-animate">
-          <span class="card__price card__will-animate"></span>
-
-          <h1 class="card__title card__will-animate"></h1>
-          <span class="card__subtitle card__will-animate"></span>
-
-        </div>
-
-        <div class="card__body">
-          <img src="emp.png" alt="Nike 19" class="card__image card__will-animate">
-          <div class="card__wish-list card__wish-list--solstice card__will-animate">Con esta app tendrás acceso a todos los numeros que vayas a necesitas, ya sea de emergencias, información de la localidad,
-            o de movilidad.
+  <!-- partial:index.partial.html -->
+  <div class="owl-carousel owl-theme">
+    <div class="owl-slide d-flex align-items-center cover" style="background-image: url(slider4.png);">
+      <div class="container">
+        <div class="row justify-content-center justify-content-md-start">
+          <div class="col-10 col-md-6 static">
+            <div class="owl-slide-text">
+              <h2 class="owl-slide-animated owl-slide-title"><b>¡Bienvenid@ a SmartHelp!</b></h2>
+              <div class="owl-slide-animated owl-slide-subtitle mb-3">
+                <b>Con ésta APP en tu bolsillo gestionarás mejor las emergencias y ahorrarás tiempo valiosísimo en estos casos. Porque recuerda:
+                <br>LAS EMERGENCIAS NO ESPERAN A NADIE.</b>
+              </div>
+            </div>
           </div>
-
-          <span class="card__category card__will-animate"></span>
         </div>
       </div>
-
-      <!-- Nike Huarache -->
-      <div class="card card--huarache">
-        <div class="card__header card__header--huarache">
-          <img src="lc.png" alt="Nike 19" class="card__image card__will-animate">
-          <div></div>
-
-          <img src="lclogo.png" alt="Nike" class="card__logo card__will-animate">
-
-          <span class="card__price card__will-animate"></span>
-
-          <h1 class="card__title card__will-animate"></h1>
-          <span class="card__subtitle card__will-animate"></span>
-
-        </div>
-
-        <div class="card__body">
-          <img src="emp.png" alt="Nike 19" class="card__image card__will-animate">
-          <div class="card__wish-list card__wish-list--solstice card__will-animate">Con tan sólo tu localización, de forma anónima y sin registros, te daremos acceso a todos los números
-            de emergencias e información donde te encuentras. Vayas donde vayas te los actualizaremos automáticamente. Recuerda...¡LAS EMERGENCIAS NO ESPERAN A NADIE!
-          </div>
-
-          <span class="card__category card__will-animate"><div class="btn">
-            <span>GO!</span>
-            <div class="dot" id="btn1"></div>
-          </div></a></span>
-        </div>
-      </div>
-
-    </div> <!-- /wrapper -->
-
-    <div class="cards-placeholder">
-      <div class="cards-placeholder__item"></div>
-      <div class="cards-placeholder__item"></div>
-      <div class="cards-placeholder__item"></div>
     </div>
-    <form action="../PagPrincipal/indexPol.html" method="get" id="formulario1">
-      <input type="hidden" name="city" id="resultado">
-    </form>
-    
+    <!--/owl-slide-->
 
-  </body>
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
+    <div class="owl-slide d-flex align-items-center cover" style="background-image: url(slider2.png);">
+      <div class="container">
+        <div class="row justify-content-center justify-content-md-start">
+          <div class="col-10 col-md-6 static">
+            <div class="owl-slide-text">
+              <h2 class="owl-slide-animated owl-slide-title"><b>En 2 clicks estás con el servicio deseado</b></h2>
+              <div class="owl-slide-animated owl-slide-subtitle mb-3"><b>
+                Hemos diseñado la aplicación para seleccionar el servicio que necesitas en cada momento en menos de 5 segundos,
+                 nosotros te ahorramos el estrés de buscar el número, sólo tienes que concentrarte en lo importante, la emergencia.
+                </b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/owl-slide-->
+
+    <div class="owl-slide d-flex align-items-center cover" style="background-image: url(slider3.png);">
+      <div class="container">
+        <div class="row justify-content-center justify-content-md-start">
+          <div class="col-10 col-md-6 static">
+            <div class="owl-slide-text">
+              <h2 class="owl-slide-animated owl-slide-title"><b>Solo con tu localización</b></h2>
+              <div class="owl-slide-animated owl-slide-subtitle mb-3"><b>
+                Estés donde estés, te proporcionamos los servicios de tu localización actual, si te mueves, SmartHelp se mueve contigo. 
+                Sin registros, sin pagos, de forma anónima.</b>
+              </div>
+              
+                <a class="boton-19" id="btn1">¡Empecemos!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/owl-slide-->
+  </div>
+  <form action="../PagPrincipal/indexPol.html" method="get" id="formulario1">
+    <input type="hidden" name="city" id="resultado">
+    <input type="hidden" name="latlng" id="punto">
+  </form>
+
+  <!-- partial -->
   <script src="../Geo/geo.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
+  <script src="./script.js"></script>
+
 </body>
+
 </html>

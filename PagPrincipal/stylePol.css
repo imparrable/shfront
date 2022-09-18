@@ -1,6 +1,15 @@
+
+<<<<<<< HEAD
 body {
-  font-family: "Open Sans", sans-serif;
-  background: linear-gradient( #8cf8b8, #2234f9);
+ 
+=======
+
+
+
+
+body {
+>>>>>>> branchPol
+  background-color: #2234f9;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -11,7 +20,7 @@ body {
   color: transparent;
   margin-top: -30px;
   margin-left: 50px;
-    
+
 }
 .desplegable2{
   position: relative;
@@ -50,11 +59,12 @@ body {
   ;
 }
 .boton{
+  
   background-color: transparent;
   border: none;
   cursor: pointer;
   position: relative;
-  top: 15px;
+  top: 10px;
   font-size: 35px;
   width: 200px;
   height: 50px;
@@ -133,10 +143,37 @@ position: relative;
 height: 40px;
 width: 40px;
 background-color:transparent;
-left: 220px;
+left: 230px;
 top: -30px;
 border: none;
 }
+.buttonPhone2 {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  background-color:transparent;
+  left: 200px;
+  top: -43px;
+  border: none;
+  }
+  .buttonPhone3 {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    background-color:transparent;
+    left: 240px;
+    top: -42px;
+    border: none;
+    }
+    .buttonPhone4 {
+      position: relative;
+      height: 40px;
+      width: 40px;
+      background-color:transparent;
+      left: 270px;
+      top: -42px;
+      border: none;
+      }
 .buttonPhone img{
 position: absolute;
 top: -1px;
