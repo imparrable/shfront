@@ -48,7 +48,7 @@ async function Comienzo() {
                   }
                 });
             });
-    funcion_creada("barcelona");
+    funcion_creada(obtenido);
   }
 
 }
