@@ -53,7 +53,7 @@ async function ejecucion(){
             var marcar = new MasCercano(dir, nombre, cordeLat, cordeLng, estado);
             //guardamos HTML en variable con cada servicio
             //imprimir += "<a href='https://maps.google.com/?q="+cordeLat+","+cordeLng+"' target='_blank'><div>Nombre: "+marcar.nom+"| <br>Dirección: "+marcar.calle+"| <br>Estado: "+marcar.esta+"</div><div>--</div></a>";
-            imprimir += `<div class="row pepe" style="border:solid black 1px;"><div class="col-9">${marcar.nom} || <strong>${marcar.esta}</strong> </div><div class="col-3"><img src="map-marker.png" alt="Maps" onclick="AbreMaps(${cordeLat},${cordeLng})"></div></div>`;
+            imprimir += `<div class="row pepe" style="border:solid white 3px;"><div class="col-9">${marcar.nom} || <strong>${marcar.esta}</strong> </div><div class="col-3"><img src="map-marker.png" alt="Maps" onclick="AbreMaps(${cordeLat},${cordeLng})"></div></div>`;
             ++respuestas;
         }
     });
