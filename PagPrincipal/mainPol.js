@@ -80,6 +80,7 @@ fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+c
 
   function showServices2(services) {
     var container2 = document.querySelector(".desplegable2");
+    var index = 0;
     services.forEach((service) => {
       container2.innerHTML += ` 
                 <div class="links2">
@@ -110,10 +111,11 @@ fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+c
                     </div>
                   </div>
                 </div>`;
+                ++index;
     });
     container2.innerHTML += "<div class='links2'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone2'><a href='../MasCercano/index.html?servicio=police'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
   }
-  fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city=" + ciudadUrl + "&category=Reparaciones")
+  fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Reparaciones")
 
     .then((data) => data.json())
     .then((services) => showServices3(services));
@@ -133,11 +135,12 @@ fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+c
     });
     container3.innerHTML += "<div class='links3'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone3'><a href='../MasCercano/index.html?servicio=locksmith'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
   }
-  fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city=" + ciudadUrl + "&category=Mascotas")
+  fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Mascotas")
 
     .then((data) => data.json())
     .then((services) => showServices4(services));
   function showServices4(services) {
+    var index = 0;
     var container4 = document.querySelector(".desplegable4");
     services.forEach((service) => {
       container4.innerHTML += ` 
@@ -169,6 +172,7 @@ fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+c
               </div>
             </div>
           </div>`;
+          ++index;
     });
     container4.innerHTML += "<div class='links4'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone4'><a href='../MasCercano/index.html?servicio=veterinary_care'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
   }
