@@ -50,7 +50,6 @@ function manda_info(latitude, longitude){
                 console.log(city_result);
                 //console.log para verificar lo que obtienen las variables y los cambios realizados.
                 alert("Localizado Correctamente: "+element.long_name+".");
-                document.getElementById("formulario1").submit();
             }
     });
 });
