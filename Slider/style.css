@@ -41,7 +41,9 @@
 
 .owl-carousel .owl-slide-title.is-transitioned {
   transition-delay: 0.2s;
+  
   color: white;
+  
   
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -49,6 +51,7 @@
 .owl-carousel .owl-slide-subtitle.is-transitioned {
   transition-delay: 0.35s;
   color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
   
 }
 
@@ -178,4 +181,16 @@ section {
 
 .boton-19:disabled {
   cursor: auto;
+}
+.logofijo{
+  display: flex;
+  background-image: url("shlogo.png");
+  background-size: auto;
+  position: absolute;
+  height: auto;
+  width: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+  
 }
