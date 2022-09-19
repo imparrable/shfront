@@ -12,13 +12,13 @@ $(".owl-carousel").on("initialized.owl.carousel", () => {
   }, 200);
 });
 
-if( !localStorage.getItem('ingreso') ){
-  // estableces el localstorage en 1 para que no se vuelva a cumplir la condicion
-  localStorage.setItem('ingreso',1); 
+// if( !localStorage.getItem('ingreso') ){
+//   // estableces el localstorage en 1 para que no se vuelva a cumplir la condicion
+//   localStorage.setItem('ingreso',1); 
 
-} else {
-  document.getElementById('formulario1').submit();
-}
+// } else {
+//   document.getElementById('formulario1').submit();
+// }
 
 const $owlCarousel = $(".owl-carousel").owlCarousel({
   items: 1,
