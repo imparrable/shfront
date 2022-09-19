@@ -1,31 +1,11 @@
-var codnUrl = document.getElementById("punto").value;
 var id_carta = 0;
-let cambioweb1 = document.getElementById("mascerca");
-let cambioweb2 = document.getElementById("contact");
-//formulario.setAttribute('action', 'ventas/registrar_compra') (EJEMPLO)
 
 //MODAL
 
-// const btnAbrirModal =
-//  document.querySelector("#btn-abrir-modal");
-// const btnCerrarModal =
-//  document.querySelector("#btn-cerrar-modal");
-// const modal =
-//  document.querySelector("#modal");
-
-
-//  btnAbrirModal.addEventListener("click",()=>{
-//     modal.showModal();
-// });
-
-// btnCerrarModal.addEventListener("click", () =>{
-//   modal.close();
-// });
-
 //generacion del HTML
 async function Comienzo() {
-  navigator.geolocation.getCurrentPosition(geoposOK);
-  function geoposOK(pos) {
+  await navigator.geolocation.getCurrentPosition(geoposOK);
+  function geoposOK(pos){
     //Obtenemos latitud y longitud
     const lat = pos.coords.latitude;
     const long = pos.coords.longitude;
@@ -36,30 +16,27 @@ async function Comienzo() {
     var urlinfo = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${cdn1},${cdn2}&key=${KEY}`;
     fetch(urlinfo)
       .then(response => response.json())
-      .then(data => {
-        let parts = data.results[0].address_components;
-        parts.forEach(element => {
-          if (element.types.includes("locality")) {
-            //codificamos la respuesta por problemas con los espacios y apostrofes para nuestra api:
-            city_result = element.long_name.replaceAll(" ", "").replaceAll("L'", "L");
-            //rellenamos el formulario con el municipio y lo enviamos a nuestra api.
-            //console log para verificar cuanto correcto es.
-            console.log(city_result);
-            obtenido = city_result;
-            //console.log para verificar lo que obtienen las variables y los cambios realizados.
-          }
-        });
-      });
-    funcion_creada(obtenido);
+        .then(data => {
+              let parts = data.results[0].address_components;
+              parts.forEach(element => {
+                  if(element.types.includes("locality")){
+                      //codificamos la respuesta por problemas con los espacios y apostrofes para nuestra api:
+                      city_result = element.long_name.replaceAll(" ","").replaceAll("L'","L");
+                      console.log("resultado 1: "+city_result);
+                      obtenido = city_result;
+                      funcion_creada(obtenido);
+                  }
+                });
+            });
   }
 
 }
 
-async function funcion_creada(ciudadUrl) {
-  fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city=Barcelona&category=Salud"))
-    .then((data) => data.json())
-    .then((services) => showServices(services));
-
+async function funcion_creada(ciudadUrl){
+fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Salud"))
+  .then((data) => data.json())
+  .then((services) => showServices(services));
+  console.log("resultado2: "+ciudadUrl);
   function showServices(services) {
     var container = document.querySelector(".desplegable");
     services.forEach((service, index) => {
