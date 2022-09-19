@@ -92,13 +92,6 @@ async function funcion_creada(ciudadUrl) {
           </div>
         </div>
       </div>
-
-  
-  
-    
-
-
-
         `;
     });
     container.innerHTML += "<div class='links'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone'><a href='../MasCercano/index.html?servicio=hospital'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
@@ -119,7 +112,27 @@ async function funcion_creada(ciudadUrl) {
                     <a href="tel:${service.telephone}"><img src="./iconos/No presenciales.png" height="41px" width="40px"></a>
                   </button>
                     </a>
-                  </div>`;
+                  </div>
+                  <button type="button" class="buttonInfo" data-toggle="modal" data-target="#exampleModal${index}">
+                  <img src="./iconos/boton-de-informacion.png" style="width: 40px; height: 40px">
+                </button>
+                
+                <div class="modal fade" id="exampleModal${index}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Información</h5>
+                      </div>
+                      <div class="modal-body">
+                        ${service.info}
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>`;
     });
     container2.innerHTML += "<div class='links2'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone2'><a href='../MasCercano/index.html?servicio=police'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
   }
@@ -158,7 +171,27 @@ async function funcion_creada(ciudadUrl) {
               <a href="tel:${service.telephone}"><img src="./iconos/No presenciales.png" height="41px" width="40px"></a>
             </button>
               </a>
-            </div>`;
+            </div>
+            <button type="button" class="buttonInfo" data-toggle="modal" data-target="#exampleModal${index}">
+            <img src="./iconos/boton-de-informacion.png" style="width: 40px; height: 40px">
+          </button>
+          
+          <div class="modal fade" id="exampleModal${index}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Información</h5>
+                </div>
+                <div class="modal-body">
+                  ${service.info}
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                 
+                </div>
+              </div>
+            </div>
+          </div>`;
     });
     container4.innerHTML += "<div class='links4'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone4'><a href='../MasCercano/index.html?servicio=veterinary_care'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
   }
