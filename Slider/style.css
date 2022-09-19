@@ -42,6 +42,8 @@
 .owl-carousel .owl-slide-title.is-transitioned {
   transition-delay: 0.2s;
   color: white;
+  
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .owl-carousel .owl-slide-subtitle.is-transitioned {
