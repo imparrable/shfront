@@ -1,28 +1,9 @@
-var codnUrl = document.getElementById("punto").value;
 var id_carta = 0;
-let cambioweb1 = document.getElementById("mascerca");
-let cambioweb2 = document.getElementById("contact");
-//formulario.setAttribute('action', 'ventas/registrar_compra') (EJEMPLO)
 
 
-//un evento para cada boton, actuando como un "a" pero es un formulario para pasar info
-// cambioweb1.addEventListener("click", () => {
-//   document.getElementById("resultado").value = ciudadUrl;
-//   document.getElementById("punto").value = codnUrl;
-//   document.getElementById("form2").setAttribute('action', '../MasCercano/index.html');
-//   document.getElementById("form2").submit();
-//   alert("coordenada: "+codnUrl);
-// });
-
-// cambioweb2.addEventListener("click", () => {
-//   document.getElementById("resultado").value = ciudadUrl;
-//   document.getElementById("punto").value = codnUrl;
-//   document.getElementById("form2").setAttribute('action', '../Contacto/index.html');
-//   document.getElementById("form2").submit();
-// });
 //generacion del HTML
 async function Comienzo() {
-  navigator.geolocation.getCurrentPosition(geoposOK);
+  await navigator.geolocation.getCurrentPosition(geoposOK);
   function geoposOK(pos){
     //Obtenemos latitud y longitud
     const lat = pos.coords.latitude;
@@ -40,15 +21,12 @@ async function Comienzo() {
                   if(element.types.includes("locality")){
                       //codificamos la respuesta por problemas con los espacios y apostrofes para nuestra api:
                       city_result = element.long_name.replaceAll(" ","").replaceAll("L'","L");
-                      //rellenamos el formulario con el municipio y lo enviamos a nuestra api.
-                      //console log para verificar cuanto correcto es.
-                      console.log(city_result);
+                      console.log("resultado 1: "+city_result);
                       obtenido = city_result;
-                      //console.log para verificar lo que obtienen las variables y los cambios realizados.
+                      funcion_creada(obtenido);
                   }
                 });
             });
-    funcion_creada(obtenido);
   }
 
 }
@@ -57,7 +35,7 @@ async function funcion_creada(ciudadUrl){
 fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Salud"))
   .then((data) => data.json())
   .then((services) => showServices(services));
-
+  console.log("resultado2: "+ciudadUrl);
   function showServices(services) {
     var container = document.querySelector(".desplegable");
           services.forEach((service) => {

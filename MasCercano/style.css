@@ -44,6 +44,7 @@ nav{
     -webkit-animation: AnimationNamepepe 11s ease infinite;
     -moz-animation: AnimationNamepepe 11s ease infinite;
     animation: AnimationNamepepe 11s ease infinite;
+    color:azure;
 }
 @-webkit-keyframes AnimationNamepepe {
     0%{background-position:22% 0%}
