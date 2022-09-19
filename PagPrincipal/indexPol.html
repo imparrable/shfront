@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../bootstrap-5.2.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="stylePol.css">
 </head>
-<body>
+<body onload="Comienzo()">
   <!-- Inicio de la animacion -->
   <div class="container-fluid" id="fuera">
     <div class="caja">
@@ -39,7 +39,7 @@
                             <li class="nav-item"> <a class="nav-link active" href="#">INICIO <span
                                         class="sr-only">(current)</span></a> </li>
                             <li class="nav-item"> <span class="nav-link" onclick="window.location.reload()">LOCALIZAME</span> </li>
-                            <li class="nav-item"> <a class="nav-link" href="../Slider/index.html">INFORMACION DE LA APP</a> </li>
+                            <li class="nav-item"> <a class="nav-link" onclick="localStorage.setItem('ingreso',0)"href="../Slider/index.html">INFORMACION DE LA APP</a> </li>
                             <li class="nav-item"> <a class="nav-link" href="../Contacto/index.html">CONTACTO & FAQ</a> </li>                            
                         </ul>
                     </div>
@@ -79,16 +79,12 @@
       </div>
         
     </main>
-    <form action="" method="get" id="form2">
-      <input type="hidden" name="city" id="resultado">
-      <input type="hidden" name="latlng" id="punto">
-    </form>
-    <script src="../Animacion/ani.js"></script>
     <script src="../LandingPage/js/jquery-3.2.1.min.js"></script>
     <script src="../LandingPage/js/script.js"></script>
     <script src="../LandingPage/js/owl.carousel.min.js"></script>
     <script src="../LandingPage/js/bootstrap.bundle.min.js"></script>
     <script src="../Geo/geo.js"></script>
-    <script src="./mainPol.js" onload="Comienzo()"></script>
+    <script src="./mainPol.js" ></script>
+    <script src="../Animacion/ani.js"></script>
 </body>
 </html>
