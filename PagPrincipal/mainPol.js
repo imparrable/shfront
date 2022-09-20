@@ -53,11 +53,11 @@ fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+c
         <img src="./iconos/boton-de-informacion.png" style="width: 30px; height: 30px">
       </button>
       
-      <div class="modal fade" id="exampleModal${index}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="exampleModal${index}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel${index}" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Información</h5>
+              <h5 class="modal-title" id="exampleModalLabel${index}">Información</h5>
             </div>
             <div class="modal-body">
               ${service.info}
@@ -114,7 +114,7 @@ fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+c
     });
     container2.innerHTML += "<div class='links2'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone2'><a href='../MasCercano/index.html?servicio=police'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
   }
-  fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city=" + ciudadUrl + "&category=Reparaciones")
+  fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Reparaciones")
 
     .then((data) => data.json())
     .then((services) => showServices3(services));
@@ -134,11 +134,12 @@ fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+c
     });
     container3.innerHTML += "<div class='links3'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone3'><a href='../MasCercano/index.html?servicio=locksmith'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
   }
-  fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city=" + ciudadUrl + "&category=Mascotas")
+  fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Mascotas")
 
     .then((data) => data.json())
     .then((services) => showServices4(services));
   function showServices4(services) {
+    var index = 0;
     var container4 = document.querySelector(".desplegable4");
     services.forEach((service) => {
       container4.innerHTML += ` 
