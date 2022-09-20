@@ -188,6 +188,14 @@ top: -70px;
 left: 270px;
 
 }
+.buttonInfo2{
+  border: none;
+  position: relative;
+  top: -70px;
+  left: 270px;
+  background: transparent;
+  
+  }
 .modal-body{
   color: black;
 }
