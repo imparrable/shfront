@@ -1,5 +1,5 @@
 #fuera {
-    background: linear-gradient(133deg, #00f5e1, #0e13df);
+    background-color: #03cafc;
     height: 100vh;
     position: absolute;
     -webkit-animation: AnimationName 10s ease infinite;
@@ -11,12 +11,16 @@
     position: absolute;
     top: 40vh; left: 25vw;
     align-items: center;
-    background: linear-gradient(131deg, #03231b, #0e13df, #0edfc5);
+    background-color: #03cafc;
     background-size: 600% 600%;
     -webkit-animation: AnimationName 10s ease infinite;
     -moz-animation: AnimationName 10s ease infinite;
     animation: AnimationName 10s ease infinite;
     align-content: center;
+}
+.col-3 img{
+    height: 40px;
+    width: 40px;
 }
 
 @-webkit-keyframes AnimationName {
@@ -35,7 +39,7 @@
     100%{background-position:7% 0%}
 }
  input{
-    background: linear-gradient(131deg, #df0e19, #0edfc5);
+    background-color: #03cafc;
     background-size: 600% 600%;
     -webkit-animation: AnimationName 10s ease infinite;
     -moz-animation: AnimationName 10s ease infinite;
@@ -43,5 +47,5 @@
     align-content: center;
     text-align: center;
     width: 100%;
-    color: #03231b;
+    color: white;
  }

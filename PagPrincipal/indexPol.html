@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartHelp</title>
-    <!-- <link rel="stylesheet" href="../bootstrap-5.2.1-dist/css/bootstrap.min.css"> -->
+    <link rel="icon" type="image/x-icon" href="./iconos/Smart Help.png">
+     <link rel="stylesheet" href="../bootstrap-5.2.1-dist/css/bootstrap.min.css"> 
     <script src="../bootstrap-5.2.1-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../Animacion/styleR.css">
+    
     <script src="../Animacion/anime-master/lib/anime.js"></script>
     <link rel="stylesheet" href="../Animacion/styleR.css">
     <link rel="stylesheet" href="../LandingPage/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../bootstrap-5.2.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="stylePol.css">
 </head>
-<body onload="Comienzo()">
+<body>
   <!-- Inicio de la animacion -->
   <div class="container-fluid" id="fuera">
     <div class="caja">
@@ -26,7 +27,7 @@
 </div>
 <!-- Hasta aqui la animacion -->
     <main class="container-fluid">
-      <div class="container" style="border-bottom: 2px solid black; margin-bottom: 3rem;">
+      <div class="container" style="border-bottom: 2px solid white; margin-bottom: 3rem;">
         <div class="row">
             <div class="col-md-12">
                 <nav class="navbar navbar-dark navbar-expand-lg">
@@ -39,8 +40,7 @@
                             <li class="nav-item"> <a class="nav-link active" href="#">INICIO <span
                                         class="sr-only">(current)</span></a> </li>
                             <li class="nav-item"> <span class="nav-link" onclick="window.location.reload()">LOCALIZAME</span> </li>
-                            <li class="nav-item"> <a class="nav-link" onclick="localStorage.setItem('ingreso',0)"href="../Slider/index.html">INFORMACION DE LA APP</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="../Contacto/index.html">CONTACTO & FAQ</a> </li>                            
+                            <li class="nav-item"> <a class="nav-link" href="../Contacto/index.html">MÁS INFORMACIÓN</a> </li>                           
                         </ul>
                     </div>
                 </nav>
@@ -51,40 +51,44 @@
         <div class="desplegable">
           <img src="./iconos/Hospital.png" style="height: 70px; width: 70px;">
           <button class="boton">Salud</button>
-              <div class="links">
-               
-              </div>
+            
       </div>
      
       <div class="desplegable2">
           <img src="./iconos/Policia.png" style="height: 70px; width: 70px;">
           <button class="boton">Seguridad</button>
-              <div class="links2">
-           
-              </div>
+              
       </div>
       <div class="desplegable3">
           <img src="./iconos/Reparaciones.png" style="height: 70px; width: 70px;">
           <button class="boton">Reparaciones</button>
-          <div class="links3">
-
-          </div>
+          
       </div>
       <div class="desplegable4">
           <img src="./iconos/Veterinario.png" style="height: 70px; width: 70px;">
           <button class="boton">Mascotas</button>
-              <div class="links4">
-               
-              </div>
+
+          
       </div>
-        
-    </main>
+      
+      
+    </main> 
+    
+    <form action="" method="get" id="form2">
+      <input type="hidden" name="city" id="resultado">
+      <input type="hidden" name="latlng" id="punto">
+    </form>
+    <script src="../Animacion/ani.js"></script>
     <script src="../LandingPage/js/jquery-3.2.1.min.js"></script>
     <script src="../LandingPage/js/script.js"></script>
     <script src="../LandingPage/js/owl.carousel.min.js"></script>
     <script src="../LandingPage/js/bootstrap.bundle.min.js"></script>
     <script src="../Geo/geo.js"></script>
-    <script src="./mainPol.js" ></script>
-    <script src="../Animacion/ani.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script> -->
+    <script src="./mainPol.js" onload="Comienzo()"></script>
 </body>
 </html>
+
