@@ -79,3 +79,12 @@ img{
 .col-md-12{
     background-color: #03cafc;
   }
+.AbiertoR{
+    color: darkgreen;
+}
+.CerradoR{
+    color: darkred;
+}
+.SininfoR{
+    color:chocolate;
+}
