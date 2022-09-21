@@ -36,12 +36,12 @@ async function funcion_creada(ciudadUrl){
 fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Salud"))
   .then((data) => data.json())
   .then((services) => showServices(services));
-  console.log("resultado2: "+ciudadUrl);
+  // console.log("resultado2: "+ciudadUrl);
   function showServices(services) {
     var container = document.querySelector(".desplegable");
     services.forEach((service, index) => {
       container.innerHTML += ` 
-          <div class="links">
+      <div class="links">
           ${service.name}
           <div class="callButton">
           <button type="button" class="buttonPhone">
@@ -49,71 +49,56 @@ fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+c
           </button>
           </a>
         </div>
-        <button type="button" class="buttonInfo" data-toggle="modal" data-target="#exampleModal${index}">
-        <img src="./iconos/boton-de-informacion.png" style="width: 40px; height: 40px">
-      </button>
+
+
+        <div class="btn-group2">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><img src="./iconos/boton-de-informacion.png" style="width:30px"; "height:30px"><span
+                class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" style="position: relative">
+            <li><a class ="prueba" style="color:black;">${service["info"]}</a></li>
+        </ul></div>
+    </div>
+</div>
+        
       
-      <div class="modal fade" id="exampleModal${index}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Información</h5>
-            </div>
-            <div class="modal-body">
-              ${service.info}
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-             
-            </div>
-          </div>
-        </div>
-      </div>
+
         `;
     });
-    container.innerHTML += "<div class='links'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone'><a href='../MasCercano/index.html?servicio=hospital'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
+    container.innerHTML += "<div class='links'><strong>Los más cercanos</strong><div ><button type='button' class='gps'><a href='../MasCercano/index.html?servicio=hospital'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
   }
   fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city=" + ciudadUrl + "&category=Seguridad")
 
     .then((data) => data.json())
     .then((services) => showServices2(services));
 
-  function showServices2(services) {
-    var container2 = document.querySelector(".desplegable2");
-    var index = 0;
-    services.forEach((service) => {
-      container2.innerHTML += ` 
-                <div class="links2">
-                  ${service.name}
-                  <div class="callButton">
-                  <button type="button" class="buttonPhone2">
-                    <a href="tel:${service.telephone}"><img src="./iconos/No presenciales.png" height="41px" width="40px"></a>
-                  </button>
-                    </a>
-                  </div>
-                  <button type="button" class="buttonInfo" data-toggle="modal" data-target="#exampleModal${index}">
-                  <img src="./iconos/boton-de-informacion.png" style="width: 40px; height: 40px">
-                </button>
-                
-                <div class="modal fade" id="exampleModal${index}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Información</h5>
-                      </div>
-                      <div class="modal-body">
-                        ${service.info}
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                       
-                      </div>
-                    </div>
-                  </div>
-                </div>`;
-                ++index;
+
+    function showServices2(services) {
+      var container2 = document.querySelector(".desplegable2");
+      services.forEach((service) => {
+        container2.innerHTML += `
+        <div class="links2">
+        ${service.name}
+        <div class="callButton">
+        <button type="button" class="buttonPhone2">
+        <a href="tel:${service.telephone}"><img src="./iconos/No presenciales.png" height="41px" width="40px"></a>
+        </button>
+        </a>
+      </div>
+
+      <div class="btn-group2">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><img src="./iconos/boton-de-informacion.png" style="width:30px"; "height:30px"><span
+              class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" style="position: relative">
+          <li><a class ="prueba" style="color:black;">${service["info"]}</a></li>
+      </ul></div>
+  </div>
+</div>
+        `;
+
     });
-    container2.innerHTML += "<div class='links2'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone2'><a href='../MasCercano/index.html?servicio=police'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
+    container2.innerHTML += "<div class='links2'><strong class='strong2'>Los más cercanos</strong><div><button class='gps'type='button'><a href='../MasCercano/index.html?servicio=police'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
   }
   fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Reparaciones")
 
@@ -131,9 +116,10 @@ fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+c
                     <a href="tel:${service.telephone}"><img src="./iconos/No presenciales.png" height="41px" width="40px"></a>
                   </button>
                     </a>
-                  </div>`;
+                  </div>
+                  `;
     });
-    container3.innerHTML += "<div class='links3'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone3'><a href='../MasCercano/index.html?servicio=locksmith'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
+    container3.innerHTML += "<div class='links3'><strong>Los más cercanos</strong class='strong2'><div><button type='button' class='gps2'><a href='../MasCercano/index.html?servicio=locksmith'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
   }
   fetch("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+ciudadUrl+"&category=Mascotas")
 
@@ -152,28 +138,10 @@ fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+c
             </button>
               </a>
             </div>
-            <button type="button" class="buttonInfo" data-toggle="modal" data-target="#exampleModal${index}">
-            <img src="./iconos/boton-de-informacion.png" style="width: 40px; height: 40px">
-          </button>
-          
-          <div class="modal fade" id="exampleModal${index}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Información</h5>
-                </div>
-                <div class="modal-body">
-                  ${service.info}
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                 
-                </div>
-              </div>
-            </div>
-          </div>`;
-          ++index;
+
+          `;
+
     });
-    container4.innerHTML += "<div class='links4'><strong>Los más cercanos</strong><div class='callButton'><button type='button' class='buttonPhone4'><a href='../MasCercano/index.html?servicio=veterinary_care'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
+    container4.innerHTML += "<div class='links4'><strong>Los más cercanos</strongclass='strong2'><div><button type='button' class='gps2'><a href='../MasCercano/index.html?servicio=veterinary_care'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
   }
 }

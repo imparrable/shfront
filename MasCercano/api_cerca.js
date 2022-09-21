@@ -19,15 +19,6 @@ var dir, nombre, cordeLat, cordeLng, estado, imprimir ="";
         ejecucion();
         }
     }
-    // function aquiEstoy(resultado){
-    //     // verificar si se guarda y no pide autorizacion a cada peticion, sino generar URLSearchParams
-    //     // ACT: en teoría parece que no lo pide en servidor
-    //     lati = resultado.coords.latitude;
-    //     long = resultado.coords.longitude;
-    //     console.log("Ubicación actual: "+lati+","+long);
-    //     urlcerca = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lati+","+long+"&radius=5000&type="+servicio+"&key="+KEY;
-    //     ejecucion();
-    //     }COORDE SE COGE DE URL
 
 
 async function ejecucion(){
@@ -42,18 +33,18 @@ async function ejecucion(){
             cordeLng = element.geometry.location.lng;
             //valores asignados para pasarle a la clase MasCercano
             if(element.hasOwnProperty("opening_hours")){
-                if(element.opening_hours.open_now) estado = "Abierto.";
-                else estado = "Cerrado.";
+                if(element.opening_hours.open_now) estado = "<span class='AbiertoR'><strong>Abierto.</strong></span>";
+                else estado = "<span class='CerradoR'><strong>Cerrado.</strong></span>";
             }
             else{
-                estado = "Sin información.";
+                estado = "<span class='SininfoR'><strong>Sin información.</strong></span>";
             }
             //instanciamos tras rellenar variables.
             
             var marcar = new MasCercano(dir, nombre, cordeLat, cordeLng, estado);
             //guardamos HTML en variable con cada servicio
             //imprimir += "<a href='https://maps.google.com/?q="+cordeLat+","+cordeLng+"' target='_blank'><div>Nombre: "+marcar.nom+"| <br>Dirección: "+marcar.calle+"| <br>Estado: "+marcar.esta+"</div><div>--</div></a>";
-            imprimir += `<div class="row pepe" style="border:solid white 3px;"><div class="col-9">${marcar.nom} || <strong>${marcar.esta}</strong> </div><div class="col-3"><img src="map-marker.png" alt="Maps" onclick="AbreMaps(${cordeLat},${cordeLng})"></div></div>`;
+            imprimir += `<div class="row pepe" style="border:solid white 3px;" onclick="AbreMaps(${cordeLat},${cordeLng})"><div class="col-9">| ${marcar.nom} <br>| ${marcar.esta} </div><div class="col-3"><img src="map-marker.png" alt="Maps"></div></div>`;
             ++respuestas;
         }
     });
