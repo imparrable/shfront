@@ -49,7 +49,7 @@ nav{
     margin-bottom: 2rem;
     padding: 0.5rem;
     color: white;
-    background-color: #03cafc;
+    background-color: #0dc4f1;
     background-size: 400% 400%;
     -webkit-animation: AnimationNamepepe 11s ease infinite;
     -moz-animation: AnimationNamepepe 11s ease infinite;
@@ -76,15 +76,38 @@ img{
     max-width: 100%;
     float: right;
 }
-.col-md-12{
-    background-color: #03cafc;
+
+.col-12{
+    background-color: #0dc4f1;
   }
 .AbiertoR{
     color: darkgreen;
+
 }
 .CerradoR{
     color: darkred;
+    vertical-align: text-bottom;
 }
 .SininfoR{
     color:chocolate;
+    vertical-align: bottom;
+}
+.estadoR{
+    float: left;
+    max-width: 40%;
+    height: 5vh;
+    max-height: 50px;
+    min-height: 10px;
+    min-width: 15px;
+}
+.contR{
+    width: 100%;
+    min-width: 40%;
+    max-height: 20%;
+}
+span{
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
 }
