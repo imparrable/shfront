@@ -1,43 +1,48 @@
 @font-face {
   font-family: Campton;
   src: url(../Fuentes/campton-cufonfonts/CamptonLight.otf) format('truetype');
+  src: url(../Fuentes/campton-cufonfonts/CamptonMedium.otf) format('truetype');
 }
 
 body {
   background-color: #03cafc;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 100vw;
   height: 100vh; 
   font-family: Campton;
   
 }
+
 .desplegable{
-  position: relative;
+  
   color: transparent;
   margin-top: -30px;
-  margin-left: 20px;
+  margin-left: 30px;
+  
 
 }
 .desplegable2{
-  position: relative;
+  
   color: transparent;
   margin-top: 10px;
-  margin-left: 20px;
+  margin-left: 30px;
+;
    
 }
 .desplegable3{
-  position: relative;
+  
   color: transparent;
   margin-top: 10px;
-  margin-left: 20px;
+  margin-left: 30px;
+  
 }
 .desplegable4{
-  position: relative;
+  
   color: transparent;
   margin-top: 10px;
-  margin-left: 20px;
-  
+  margin-left: 30px;
+ 
 }
 .desplegable:hover .links{
   display: block;
@@ -82,6 +87,9 @@ body {
   position: relative;
   left: 15px;
   height: 90px;
+  text-align: center;
+  left: -20px;
+  margin-top: 20px;
 }
 .links2 a{
   text-decoration: none;
@@ -94,6 +102,12 @@ body {
   display: none;
   font-size: 20px;
   color: white;
+  text-align: center;
+  position: relative;
+  right: 10px;
+  margin-top: 20px;
+  
+  
 }
 .links3 a{
   text-decoration: none;
@@ -106,6 +120,10 @@ body {
   display: none;
   font-size: 20px;
   color: white;
+  text-align: center;
+  position: relative;
+  right: 30px;
+  margin-top: 20px;
 }
 .links4 a{
   text-decoration: none;
@@ -118,7 +136,12 @@ body {
   display: none;
   font-size: 20px;
   color: white;
+  position: relative;
+  right: 30px;
+  text-align: center;
+  margin-top: 20px;
 }
+
 p{
   color: white;
   font-size: 31px;
@@ -128,20 +151,20 @@ p{
   margin-bottom: 100px;
   border-bottom: solid 2px white;
 }
-.callButon{
+/* .callButon{
   display: flex;
   flex-direction: column;
   width: 40px;
   height: 40px;
   position: relative;
   left: 200px;
-}
+} */
 .buttonPhone {
 position: relative;
 height: 40px;
 width: 40px;
 background-color:transparent;
-left: 240px;
+left: 170px;
 top: -30px;
 border: none;
 }
@@ -150,8 +173,8 @@ border: none;
   height: 40px;
   width: 40px;
   background-color:transparent;
-  left: 220px;
-  top: -43px;
+  left: 140px;
+  top: -45px;
   border: none;
   }
   .buttonPhone3 {
@@ -159,8 +182,8 @@ border: none;
     height: 40px;
     width: 40px;
     background-color:transparent;
-    left: 240px;
-    top: -42px;
+    left: 140px;
+    top: -52px;
     border: none;
     }
     .buttonPhone4 {
@@ -168,8 +191,8 @@ border: none;
       height: 40px;
       width: 40px;
       background-color:transparent;
-      left: 270px;
-      top: -42px;
+      left: 140px;
+      top: -45px;
       border: none;
       }
 .buttonPhone img{
@@ -180,23 +203,53 @@ right: 1px;
 .col-md-12{
   background-color: #03cafc;
 }
-.buttonInfo{
-background: transparent;
-border: none;
-position: relative;
-top: -70px;
-left: 270px;
+.btn-group{
+  position: relative;
+  top: -75px;
+  right: 150px;
+}
+
+.btn-group2{
+  position: relative;
+  top: -80px;
+  right: 150px;
 
 }
-.buttonInfo2{
+
+.strong2{
+  color: white;
+  font-family: Campton;
+  font-size: 20px;
+  text-align: center;
+  position: relative;
+  left: -30px;
+}
+.strong3{
+  color: white;
+  font-family: Campton;
+  font-size: 20px;
+  text-align: center;
+  position: relative;
+  left: -30px;
+}.strong4{
+  color: white;
+  font-family: Campton;
+  font-size: 20px;
+  text-align: center;
+  position: relative;
+  left: -30px;
+}
+.gps{
+  background: transparent;
   border: none;
   position: relative;
-  top: -70px;
-  left: 270px;
-  background: transparent;
-  
-  }
-.modal-body{
-  color: black;
+  bottom: 45px;
+  left: 110px;
 }
-
+.gps2{
+  background: transparent;
+  border: none;
+  position: relative;
+  bottom: 45px;
+  left: 130px;
+}
