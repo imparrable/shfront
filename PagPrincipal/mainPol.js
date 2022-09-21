@@ -50,6 +50,7 @@ fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+c
           </a>
         </div>
 
+
         <div class="btn-group2">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><img src="./iconos/boton-de-informacion.png" style="width:30px"; "height:30px"><span
                 class="caret"></span>
@@ -61,6 +62,7 @@ fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+c
 </div>
         
       
+
         `;
     });
     container.innerHTML += "<div class='links'><strong>Los más cercanos</strong><div ><button type='button' class='gps'><a href='../MasCercano/index.html?servicio=hospital'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
@@ -69,6 +71,7 @@ fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+c
 
     .then((data) => data.json())
     .then((services) => showServices2(services));
+
 
     function showServices2(services) {
       var container2 = document.querySelector(".desplegable2");
@@ -93,6 +96,7 @@ fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+c
   </div>
 </div>
         `;
+
     });
     container2.innerHTML += "<div class='links2'><strong class='strong2'>Los más cercanos</strong><div><button class='gps'type='button'><a href='../MasCercano/index.html?servicio=police'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
   }
@@ -134,7 +138,9 @@ fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+c
             </button>
               </a>
             </div>
+
           `;
+
     });
     container4.innerHTML += "<div class='links4'><strong>Los más cercanos</strongclass='strong2'><div><button type='button' class='gps2'><a href='../MasCercano/index.html?servicio=veterinary_care'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
   }
