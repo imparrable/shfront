@@ -4,12 +4,41 @@ var id_carta = 0;
 
 //generacion del HTML
 async function Comienzo() {
-  await navigator.geolocation.getCurrentPosition(geoposOK);
+  anime({
+    targets: ".caja input",
+    value: [0, 100],
+    round: 1,
+    easing: 'easeInOutExpo',
+    duration: 1000,
+    direction: 'alternate',
+    loop: true
+  });
+  navigator.geolocation.getCurrentPosition(geoposOK,geoposKO);
   function geoposOK(pos){
     //Obtenemos latitud y longitud
     const lat = pos.coords.latitude;
     const long = pos.coords.longitude;
     ciudad_actual(lat, long);
+  }
+  function geoposKO(err){
+    console.warn(err.message);
+    let msg;
+    switch(err.code) {
+        case err.PERMISSION_DENIED:
+            msg = "No nos has dado permiso para obtener tu posición";
+            break;
+        case err.POSITION_UNAVAILABLE:
+            msg = "Tu posición actual no está disponible";
+            break;
+         case err.TIMEOUT:
+             msg = "No se ha podido obtener tu posición en un tiempo prudencial";
+             break;
+         default:
+             msg = "Error desconocido";
+             break;
+    }
+    alert(msg);
+    document.location.reload(true);
   }
   function ciudad_actual(cdn1, cdn2) {
     var obtenido;
@@ -144,4 +173,8 @@ fetch(("https://euvgxet430.execute-api.eu-west-3.amazonaws.com/services?city="+c
     });
     container4.innerHTML += "<div class='links4'><strong>Los más cercanos</strongclass='strong2'><div><button type='button' class='gps2'><a href='../MasCercano/index.html?servicio=veterinary_care'><img src='../MasCercano/map-marker.png' height='41px' width='40px'></a></button></a></div></div>";
   }
+  var yacargado = setTimeout(()=>{
+    var p = document.getElementById("fuera");
+    p.remove();
+   },500);
 }
