@@ -35,7 +35,7 @@ async function ejecucion(){
     console.log(data.results);
     data.results.forEach(element => {
         //por defecto expulsa 20; limitamos a 8 con la variable respuestas.
-        if(respuestas < 8){
+        if(respuestas < 15){
             dir = element.vicinity;
             nombre = element.name;
             cordeLat = element.geometry.location.lat;
@@ -58,7 +58,6 @@ async function ejecucion(){
             ++respuestas;
         }
     });
-    imprimir += '<input type="button" value="recargar" class="btn btn-info" onClick="window.location.reload()">';
     //generamos voton para recargar página y imprimo contenido en pantalla
     mensaje.innerHTML = imprimir;
     var pepe = setTimeout(()=>{
