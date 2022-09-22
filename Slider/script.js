@@ -16,6 +16,7 @@ $(".owl-carousel").on("initialized.owl.carousel", () => {
    localStorage.setItem('ingreso',1); 
 
  } else {
+  alert("Bienvenido de nuevo ^^");
    document.getElementById('formulario1').submit();
  }
 

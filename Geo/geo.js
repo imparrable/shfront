@@ -56,7 +56,7 @@ function manda_info(latitude, longitude){
 }
 //ejecutamos la funcion al click de permiso por parte del usuario:
 //desde aquí comienza realmente ya que tienen el EVENTLISTENER.
-document.getElementById("btn1").addEventListener("click", function(){
-        navigator.geolocation.getCurrentPosition(geoposOK, geoposKO);
-});
+// document.getElementById("btn1").addEventListener("click", function(){
+//         navigator.geolocation.getCurrentPosition(geoposOK, geoposKO);
+// });
 
