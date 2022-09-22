@@ -22,16 +22,17 @@ var dir, nombre, cordeLat, cordeLng, estado, imprimir ="";
 
 
 async function ejecucion(){
-    fetch(urlcerca).then(response => response.json()).then(data => {
-    console.log(data.results);
     anime({
         targets: ".caja input",
         value: [0, 100],
         round: 1,
         easing: 'easeInOutExpo',
-        duration: 1500,
-      
+        duration: 1000,
+        direction: 'alternate',
+        loop: true
       });
+    fetch(urlcerca).then(response => response.json()).then(data => {
+    console.log(data.results);
     data.results.forEach(element => {
         //por defecto expulsa 20; limitamos a 8 con la variable respuestas.
         if(respuestas < 8){
@@ -45,7 +46,8 @@ async function ejecucion(){
                 else estado = "<img class='estadoR' src='./iconos/cerrado.png'><span class='CerradoR'>Cerrado.</span>";
             }
             else{
-                estado = "<img class='estadoR' src='./iconos/sininfo.png'><span class='SininfoR'>Sin información.</span>";
+                if(element.types.includes("police")) estado = "<img class='estadoR' src='./iconos/abierto.png'><span class='AbiertoR'>Abierto.</span>";
+                else estado = "<img class='estadoR' src='./iconos/sininfo.png'><span class='SininfoR'>Sin información.</span>";
             }
             //instanciamos tras rellenar variables.
             
@@ -62,7 +64,7 @@ async function ejecucion(){
     var pepe = setTimeout(()=>{
         var p = document.getElementById("fuera");
         p.remove();
-       },2000);
+       },1000);
 })}
 
     // creacion de la clase MasCercano para interactuar con la info recibida
